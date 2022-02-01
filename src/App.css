@@ -1,38 +1,59 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Open Sans", sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+svg.hangman {
+  width: 18.75rem;
+  height: 18.75rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+svg > * {
+  stroke: #6599aa;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  transition: 0.25s;
+}
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+.guess-letters {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.guess-letter {
+  width: 30px;
+  height: 60px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-end;
+  font-size: 33px;
 }
-
-.App-link {
-  color: #61dafb;
+.guess-letter.empty {
+  border-bottom: 2px solid #000;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.used-letters {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.game-result {
+  font-size: 60px;
+}
+.letters {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+.letter a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 32px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
