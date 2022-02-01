@@ -3,53 +3,72 @@ import "./App.css";
 
 import GuessedLetters from "./Components/GuessedLetters/GuessedLetters";
 import UsedLetters from "./Components/UsedLetters/UsedLetters";
-import AbecedaryLetter from "./Components/AbecedaryLetter";
+import AlphabetLetter from "./Components/AlphabetLetter/AlphabetLetter";
+import alphabet from "./data/alphabet";
 
 function App() {
-  const [word, setWord] = useState([
-    "E",
-    "S",
-    "T",
-    "E",
-    "P",
-    "I",
-    "C",
-    "U",
-    "R",
-    "S",
-    "O",
-    "R",
+  const [word] = useState([
+    {
+      letter: "E",
+      id: 1,
+      found: false,
+    },
+    {
+      letter: "S",
+      id: 2,
+      found: false,
+    },
+    {
+      letter: "T",
+      id: 3,
+      found: false,
+    },
+    {
+      letter: "E",
+      id: 4,
+      found: false,
+    },
+    {
+      letter: "P",
+      id: 5,
+      found: false,
+    },
+    {
+      letter: "I",
+      id: 6,
+      found: false,
+    },
+    {
+      letter: "C",
+      id: 7,
+      found: false,
+    },
+    {
+      letter: "U",
+      id: 8,
+      found: false,
+    },
+    {
+      letter: "R",
+      id: 9,
+      found: false,
+    },
+    {
+      letter: "S",
+      id: 10,
+      found: false,
+    },
+    {
+      letter: "O",
+      id: 11,
+      found: false,
+    },
+    {
+      letter: "R",
+      id: 12,
+      found: false,
+    },
   ]);
-
-  const abecedary = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "Ñ",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "X",
-    "Y",
-    "Z",
-  ];
 
   const getLetter = (letter) => {
     // console.log(letter);
@@ -80,7 +99,11 @@ function App() {
       </div>
       <ul className="guess-letters">
         {word.map((letter) => (
-          <GuessedLetters className={"guess-letter empty"} letter={""} />
+          <GuessedLetters
+            key={letter.id}
+            className={"guess-letter empty"}
+            letter={""}
+          />
         ))}
       </ul>
       <section className="used-letters-container">
@@ -91,8 +114,9 @@ function App() {
       </section>
       <section className="game-result">You're dead!</section>
       <ul className="letters">
-        {abecedary.map((letter) => (
-          <AbecedaryLetter
+        {alphabet.map((letter) => (
+          <AlphabetLetter
+            key={letter}
             letter={letter}
             actionOnClick={() => {
               getLetter(letter);
