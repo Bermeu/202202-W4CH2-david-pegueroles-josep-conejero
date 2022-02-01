@@ -1,7 +1,26 @@
+import { useState } from "react";
 import "./App.css";
+
+import GuessedLetters from "./Components/GuessedLetters/GuessedLetters";
+import UsedLetters from "./Components/UsedLetters/UsedLetters";
 import AbecedaryLetter from "./Components/AbecedaryLetter";
 
 function App() {
+  const [word, setWord] = useState([
+    "E",
+    "S",
+    "T",
+    "E",
+    "P",
+    "I",
+    "C",
+    "U",
+    "R",
+    "S",
+    "O",
+    "R",
+  ]);
+
   const abecedary = [
     "A",
     "B",
@@ -60,18 +79,14 @@ function App() {
         </svg>
       </div>
       <ul className="guess-letters">
-        <li className="guess-letter empty"></li>
-        <li className="guess-letter">A</li>
-        <li className="guess-letter empty"></li>
-        <li className="guess-letter">A</li>
-        <li className="guess-letter empty"></li>
+        {word.map((letter) => (
+          <GuessedLetters className={"guess-letter empty"} letter={""} />
+        ))}
       </ul>
       <section className="used-letters-container">
         <h2>Used letters</h2>
         <ul className="used-letters">
-          <li className="used-letter">B,&nbsp;</li>
-          <li className="used-letter">B,&nbsp;</li>
-          <li className="used-letter">B</li>
+          <UsedLetters list="A, B, C" />
         </ul>
       </section>
       <section className="game-result">You're dead!</section>
