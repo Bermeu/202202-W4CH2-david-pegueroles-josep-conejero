@@ -1,0 +1,28 @@
+COMPONENTES Y RESPONSABILIDADES
+
+App.js (página)
+- Contar número de errores
+- Decir qué imágenes deben mostrarse del Hangman
+- Decir qué letras de Word deben mostrarse
+- actualizar letras utilizadas
+- decide qué acción ejecutará Abecedary-letter
+
+Word (array de objetOs)
+- Mostrar letras 
+ 
+FinalMessage
+- Mostrar un mensaje
+
+Hangman
+- Mostrar imágenes 
+
+Abecedary-letter
+- recibir click del usuario y ejecutar una acción
+
+
+DATOS
+
+palabra (string)
+letras utilizadas (string)
+número de fallos (number)
+estado del juego (finished o notFinished)
